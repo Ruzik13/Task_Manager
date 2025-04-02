@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(22, 22, 22);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#tasks_place{
+    display: grid;
+    grid-template-columns: repeat(4,350px);
+    grid-template-rows: auto;
+    justify-content: center;
+}
+
+.task{
+    color:white;
+    font-size: 16px;
+    max-width: 300px;
+    height: 200px;
+    background-color: rgb(43, 43, 43);
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin: 10px 10px;
+}
+
+.task:hover{
+    max-width:306px;
+    height:206px;
+    font-size: 17px;
+}
+
+#adder{
+    border: none;
+    width:70px;
+    height:70px;
+    border-radius: 12px;
+}
+
+#adder:hover{
+    width: 74px;
+    height: 74px;
+}
