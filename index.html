@@ -3,25 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/index.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="style/index.css">
+    <title>Task-manager</title>
 </head>
 <body>
     <section id="tasks_place">
-        <div class="task" id="task_1">
-            <h3 class="task__tittle">Задача 1</h3>
-            <p class="task__status">
-                <strong>Статус:</strong> в процессе
-            </p>
-            <p class="task__description">Описание задачи 1</p>
-        </div>
-
-        <div class="task" id="task_2">
-            <h3 class="task__tittle">Задача 2</h3>
-        </div>
     </section>
+    
+    <div class="button-area">
+        <button class="button" id="adder">
+            <img src="img/icons8-edit.svg" alt="edit" id="adder__icon">
+        </button>
+    </div>
 
-    <button id="adder">Добавить</button>
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Новая задача</h2>
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="taskName">Название:</label>
+                    <input type="text" id="taskName" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskDesc">Описание:</label>
+                    <textarea id="taskDesc" rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Добавить</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script/index.js"></script>
 </body>
