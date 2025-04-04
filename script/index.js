@@ -50,7 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="task" id="${taskId}">
                 <h3 class="task__tittle">${name}</h3>
                 ${description ? `<p class="task__description">${description}</p>` : ''}
-                <button class="delete-task" onclick="deleteTask('${taskId}')">×</button>
+                <button class='task__button done'>✓</button>
+                <button class="task__button" onclick="deleteTask('${taskId}')">×</button>
             </div>
         `;
         

@@ -57,7 +57,6 @@ body {
     object-fit: contain; 
 }
 
-/* Стили модального окна */
 .modal {
     display: none;
     position: fixed;
@@ -143,11 +142,10 @@ body {
 }
 
 .task {
-    position: relative; /* Для позиционирования кнопки удаления */
-    /* остальные стили задачи */
+    position: relative; 
 }
 
-.delete-task {
+.task__button {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -166,6 +164,17 @@ body {
     transition: opacity 0.2s;
 }
 
-.task:hover .delete-task {
+.delete {
+    top: 5px;
+    right: 5px;
+}
+
+.done {
+    background: #45a049;
+    top: 35px;
+    right: 5px;
+}
+
+.task:hover .task__button {
     opacity: 1;
 }
