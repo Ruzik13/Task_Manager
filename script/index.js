@@ -35,30 +35,29 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Создаем новую задачу
         createTask(taskName, taskDesc);
         
-        // Очищаем форму и закрываем модальное окно
         taskForm.reset();
         modal.style.display = 'none';
     });
 
-    // Функция создания задачи
     function createTask(name, description) {
         const taskId = 'task_' + Date.now();
         const taskHTML = `
             <div class="task" id="${taskId}">
                 <h3 class="task__tittle">${name}</h3>
                 ${description ? `<p class="task__description">${description}</p>` : ''}
-                <button class='task__button done'>✓</button>
-                <button class="task__button" onclick="deleteTask('${taskId}')">×</button>
+                <div class="task__button-area">
+                    <button class='task__button done'>✓</button>
+                    <button class='task__button edit'><img src="img/icons8-edit.svg" alt="edit" id="edit_btn"></button>
+                    <button class="task__button delete" onclick="deleteTask('${taskId}')">×</button>
+                </div>
             </div>
         `;
         
         tasksContainer.insertAdjacentHTML('beforeend', taskHTML);
     }
 
-    // Функция удаления задачи (добавьте в глобальную область видимости)
     window.deleteTask = function(taskId) {
         const task = document.getElementById(taskId);
         if (task) {
