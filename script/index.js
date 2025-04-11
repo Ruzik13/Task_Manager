@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-
     const status = {
         deleted : "Удалено",
         in_prog : "В процессе",
         done : "Готово",
-
     };
 
     const addModal = document.getElementById('taskModal');
@@ -51,14 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!taskId){
             taskId = 'task_' + Date.now();
         }
-
         const taskElement = document.createElement('div');
         taskElement.className = 'task';
         taskElement.id = taskId;
         taskElement.innerHTML = `
-            <h3 class="task__tittle">${name}</h3>
+            <h2 class="task__tittle">${name}</h3>
+            <h4 class="task__status">Статус: <span class="status__in_prog">${status.in_prog}</span></h3>
             ${description ? `<p class="task__description">${description}</p>` : ''}
-            <p class="task__status"><strong>Статус:</strong> ${status.in_prog}</p>
             <div class="task__button-area">
                 <button class='task__button done'>✓</button>
                 <button class='task__button edit' data-task-id="${taskId}">
@@ -66,10 +63,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 </button>
                 <button class="task__button delete" data-task-id="${taskId}">×</button>
             </div>
+
         `;
 
         if (!document.getElementById(taskId)){
             tasksContainer.appendChild(taskElement)
         }
     }
-})
+
+    tasksContainer.addEventListener('click', (e) =>{
+        const target = e.target.closest('[data-task-id]');
+        if (!target) return;
+
+        const taskId = target.dataset.taskId;
+        if (target.classList.contains('delete')){
+            deleteTask(taskId);
+        }
+    })
+
+    function deleteTask(taskId){
+        const task = document.getElementById(taskId);
+        if (task){
+            task.remove();
+        }
+    }
+    
+
+});

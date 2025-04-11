@@ -195,3 +195,15 @@ body {
     scale: 1.1;
     transition: scale 0.2s
 }
+
+.status__in_prog{
+    color: rgb(195, 195, 255);
+}
+
+.status__done{
+    color:#4CAF50;
+}
+
+.status__deleted{
+    color: #ff4444;
+}
