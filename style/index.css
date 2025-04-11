@@ -155,7 +155,6 @@ body {
 }
 
 .task__button {
-    background: #ff4444;
     color: white;
     border: none;
     width: 25px;
@@ -178,10 +177,14 @@ body {
     background: #aaa;
 }
 
-#edit_btn{
+.delete{
+    background: #ff4444;
+}
+
+.edit_btn{
     height: 20px;
     width: 20px;
-    opacity: 0.6;
+    opacity: 0.4;
 }
 
 .task:hover .task__button {
@@ -190,6 +193,5 @@ body {
 
 .task__button:hover{
     scale: 1.1;
-    box-shadow: 0px 3px 8px 0 #5d5d5d;
-    transition: scale 0.2s, box-shadow 0.2s;
+    transition: scale 0.2s
 }
